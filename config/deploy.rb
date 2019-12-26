@@ -2,7 +2,7 @@
 lock "3.11.2"
 
 set :application, "freemarket_sample_64b"
-set :repo_url, "git@example.com:Ryu1234-tech/freemarket_sample_64b.git"
+set :repo_url, "git@github.com:Ryu1234-tech/freemarket_sample_64b.git"
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
@@ -20,11 +20,24 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 # Unicornの設定ファイルの場所
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
+
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:restart'
+    # invoke 'unicorn:restart'
+    invoke 'unicorn:stop'
+    invoke 'unicorn:start'
   end
 end
+
+# set :default_env, {
+#   # rbenv_root: "/usr/local/rbenv",
+#   # path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+#   AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+#   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+# }
+
+
