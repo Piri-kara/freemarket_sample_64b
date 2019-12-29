@@ -50,4 +50,7 @@ Rails.application.routes.draw do
   get '/mypage/identification', to:'mypage#identification'
   get '/mypage/profile', to: 'mypage#profile'
   get '/mypage/logout', to: 'mypage#logout'
+
+  #user編集へのルーティング
+  resources :users, only: [:update]
 end

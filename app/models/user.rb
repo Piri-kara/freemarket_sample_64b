@@ -18,7 +18,7 @@ class User < ApplicationRecord
     end
     user
   end
-
+ 
   # Associations
   has_many :sns_credentials, dependent: :destroy
   has_many :cards,dependent: :destroy
@@ -30,7 +30,6 @@ class User < ApplicationRecord
   # Validations
   validates :nickname,
             :email,
-            :password,
             :last_name,
             :first_name,
             :last_name_kana,
@@ -44,7 +43,7 @@ class User < ApplicationRecord
   validates :email, :phone_number, uniqueness:true
   # 英語と数字を最低1文字ずつ含まなければならない
 
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,20}+\z/i}
+  #validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,20}+\z/i}
   # 全角の漢字のみOK
   validates :last_name, :first_name, format: { with: /\A[一-龥]+\z/}
   # 全角カタカナのみ

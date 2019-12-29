@@ -124,12 +124,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
         render "step1"
       end
     end
-
   end
-  private
 
+  private
 
   def customize_sign_up_params
     devise_parameter_sanitizer.permit :sign_up, keys: [:username, :email, :password, :remember_me]
   end
+
 end

@@ -23,13 +23,16 @@
                 = fa_icon 'chevron-right'
             .id-form__form-group
               %label.id-form-label お名前
-              %p.identification-item 杉森 笑
+              %p.identification-item
+                = "#{@user.last_name}" "#{@user.first_name}"
             .id-form__form-group
               %label.id-form-label お名前カナ
-              %p.identification-item スギモリ エミ
+              %p.identification-item
+                = "#{@user.last_name_kana}""#{@user.first_name_kana}"
             .id-form__form-group
               %label.id-form-label{for: "birthday"} 生年月日
-              %p.identification-item 1985/03/03
+              %p.identification-item
+                = "#{@user.birthyear.name}/#{@user.birthmonth.name}/#{@user.birthday}"
             .id-form__form-group
               %label.id-form-label{for: "zip_code"} 郵便番号
               %span.form-arbitrary 任意

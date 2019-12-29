@@ -12,6 +12,7 @@ class MypageController < ApplicationController
   end
 
   def identification
+    @user = User.find(current_user.id)
   end
 
   def profile

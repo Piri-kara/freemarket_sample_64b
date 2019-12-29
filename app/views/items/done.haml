@@ -11,7 +11,7 @@
     .buy-complete
       %h2.buy-complete-text 購入が完了しました
     .buy-complete-img
-      = image_tag "#{@item.images[0].image_url}", height: "200px" , width: "200px"
+      = image_tag "#{@item.image}", height: "200px" , width: "200px"
       %p.buy-done-itemname 
         = @item.name
     .buy-complete-price
