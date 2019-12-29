@@ -14,7 +14,7 @@ CarrierWave.configure do |config|
       aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],  #credentails.ymlに鍵の本体があります
       region: 'ap-northeast-1'
     }
-    config.fog_directory  = 'mercari64b' #'S3のバケット名'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/mercari64b'
+    config.fog_directory  = 'freemarketsample64byamashita' #'S3のバケット名'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarketsample64byamashita'
   end
 end
