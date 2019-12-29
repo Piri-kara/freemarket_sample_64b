@@ -22,6 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -54,6 +55,8 @@ has_one :user_address
 
 
 ## user_addressテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user_id|reference|null: false, foreign_key: true|
 |postcode|string|null: false|
 |prefecture_id|reference|null: false, foreign_key: true|
@@ -68,6 +71,8 @@ belongs_to_active_hash :prefecture
 
 
 ## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |uid|string||
 |provider|string||
 |user_id|reference|foreign_key: true|
@@ -167,6 +172,8 @@ belongs_to :item
 
 
 ## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |content|string|null: false|
 |item_id|reference|null: false, foreign_key: true|
 |user_id|reference|null: false, foreign_key: true|
