@@ -21,7 +21,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
-## usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
@@ -55,7 +55,7 @@ has_one :user_address
 ## user_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
 |postcode|string|null: false|
 |prefecture_id|reference|null: false, foreign_key: true|
 |city|string|null: false|
@@ -73,26 +73,27 @@ belongs_to_active_hash :prefecture
 |------|----|-------|
 |uid|string||
 |provider|string||
-|user_id|reference|foreign_key: true|
+|user|reference|foreign_key: true|
 
 ### Association
 belongs_to :user, optional: true
 
+
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|seller_id|reference|null: false, foreign_key: true|
-|buyer_id|reference|null: false, foreign_key: true|
+|seller|reference|null: false, foreign_key: true|
+|buyer|reference|null: false, foreign_key: true|
 |name|string|null: false, add_index: true|
 |description|string|null: false|
-|category_id|reference|null: false, foreign_key: true|
-|size_id|reference|null: false, foreign_key: true|
-|brand_id|reference|null: false, foreign_key: true|
-|condition_id|reference|null: false, foreign_key: true|
-|prefecture_id|reference|null: false, foreign_key: true|
-|sendingmethod_id|reference|null: false, foreign_key: true|
-|postageburden_id|reference|null: false, foreign_key: true|
-|shippingday_id|reference|null: false, foreign_key: true|
+|category|reference|null: false, foreign_key: true|
+|size|reference|null: false, foreign_key: true|
+|brand|reference|null: false, foreign_key: true|
+|condition|reference|null: false, foreign_key: true|
+|prefecture|reference|null: false, foreign_key: true|
+|sendingmethod|reference|null: false, foreign_key: true|
+|postageburden|reference|null: false, foreign_key: true|
+|shippingday|reference|null: false, foreign_key: true|
 |price|integer|null: false|
 |profit|integer|null: false|
 
