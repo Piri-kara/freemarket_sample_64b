@@ -97,7 +97,7 @@ belongs_to :user, optional: true
 |price|integer|null: false|
 |profit|integer|null: false|
 
-### Association
+### Association
 has_many :images, dependent: :destroy
 accepts_nested_attributes_for :images, allow_destroy: true
 has_many :comments
