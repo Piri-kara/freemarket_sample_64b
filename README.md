@@ -39,7 +39,7 @@ Things you may want to cover:
 |header_image|text|null: false|
 |introduce|text||
 
-### Association
+### Association
 has_many :items
 has_many :comments
 has_many :messages
@@ -79,7 +79,7 @@ belongs_to_active_hash :prefecture
 belongs_to :user, optional: true
 
 
-## itemsテーブル
+## items
 |Column|Type|Options|
 |------|----|-------|
 |seller|reference|null: false, foreign_key: true|
